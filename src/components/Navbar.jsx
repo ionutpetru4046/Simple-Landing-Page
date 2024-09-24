@@ -1,5 +1,6 @@
 import { useState } from "react"
 import logo from "../assets/logo.webp"
+import { RiCloseLine, RiMenu3Line } from "@remixicon/react"
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false)
@@ -17,9 +18,12 @@ const Navbar = () => {
             </div>
 
             <div className="md:hidden">
-                <button onClick={toggleMenu} className="text-2xl pr-2"></button>
+                <button onClick={toggleMenu} className="text-2xl pr-2 focus:outline-none" aria-label={isOpen ? "Close menu" : "Open menu"}>
+                    {isOpen ? <RiCloseLine /> : <RiMenu3Line />}
+                </button>
             </div>
 
+            <div className=""></div>
         </div>
     </nav>
   )
