@@ -1,6 +1,7 @@
 import { useState } from "react"
 import logo from "../assets/logo.webp"
 import { RiCloseLine, RiMenu3Line } from "@remixicon/react"
+import { LINKS } from "../constants"
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false)
@@ -23,8 +24,23 @@ const Navbar = () => {
                 </button>
             </div>
 
-            <div className=""></div>
+            <div className="hidden md:flex space-x-8 md:space-x-4 pr-2">
+                {LINKS.map((link, index) => (
+                    <a key={index} href={link.link} className="uppercase text-sm font-medium">
+                        {link.name}
+                    </a>
+                ))}
+            </div>
         </div>
+
+        <div className={`${
+            isOpen ? "block" : "hidden"} md:hidden absolute bg-neutral-50 w-full py-5 px-4 mt-2 border-b-4`}>
+                {LINKS.map((link, index) => (
+                    <a key={index} href={link.link} className="uppercase text-lg font-medium block py-2 tracking-wide">
+                        {link.name}
+                    </a>
+                ))}
+            </div>
     </nav>
   )
 }
