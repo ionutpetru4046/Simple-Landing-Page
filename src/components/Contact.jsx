@@ -1,4 +1,4 @@
-import { RiPhoneLine } from "@remixicon/react"
+import { RiMailLine, RiMapPinLine, RiPhoneLine } from "@remixicon/react"
 import { CONTACT_INFO } from "../constants"
 
 const Contact = () => {
@@ -15,6 +15,24 @@ const Contact = () => {
             <div className="flex flex-col lg:flex-row justify-around mx-4">
                 <div className="flex mb-8 lg:mb-0">
                     <RiPhoneLine className="text-3xl mr-4" />
+                    <div>
+                        <p className="text-lg font-semibold">{CONTACT_INFO.phone.label}</p>
+                        <p className="text-neutral-600">{CONTACT_INFO.phone.value}</p>
+                    </div>
+                </div>
+                <div className="flex mb-8 lg:mb-0">
+                    <RiMailLine className="text-3xl mr-4" />
+                    <div>
+                        <p className="text-lg font-semibold">{CONTACT_INFO.email.label}</p>
+                        <p className="text-neutral-600">{CONTACT_INFO.email.value}</p>
+                    </div>
+                </div>
+                <div className="flex mb-8 lg:mb-0">
+                    <RiMapPinLine className="text-3xl mr-4" />
+                    <div>
+                        <p className="text-lg font-semibold">{CONTACT_INFO.address.label}</p>
+                        <p className="text-neutral-600">{CONTACT_INFO.address.value}</p>
+                    </div>
                 </div>
             </div>
         </div>
