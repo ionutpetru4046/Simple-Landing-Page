@@ -19,6 +19,7 @@ const Reviews = () => {
                     <p className="text-sm font-bold">
                       {review.name}
                     </p>
+                    <p className="text-sm text-neutral-500">{review.title}</p>
                   </div>
                 </div>
               </div>
